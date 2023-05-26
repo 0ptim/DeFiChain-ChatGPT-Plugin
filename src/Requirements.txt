@@ -2,3 +2,4 @@ Flask
 python-dotenv
 openai
 qdrant-client
+gunicorn
