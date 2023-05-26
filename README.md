@@ -1,37 +1,48 @@
 # DeFiChain ChatGPT Plugin
 
-ChatGPT Plugin for Defichain.
+> https://defichain-chatgpt-plugin.fly.dev
 
 ## Core objectives
 
 1. Can answer questions about DeFiChain.
 2. Can get live blockchain data.
 
-## Implementation overview
+## How do we achieve this?
 
 1. Retrieve relevant documents from the `DeFiChainWiki` Qdrant vector database to provide ChatGPT with relevant information.
-2. Relay Ocean API requests to the Ocean API.
+   1. Get a query from ChatGPT.
+   2. Embed the query with the OpenAI API.
+   3. Retrieve similar documents from the `DeFiChainWiki` Qdrant vector database.
+2. Use Ocean API under the hood for blockchain data.
+   1. This ist till in the works.
 
-## Implementation details
+## Implementation
 
-- We'll create a Python Flask app that will serve all the endpoints and the plugin definition.
-- The API will be hosted on fly.io.
-- We'll use Docker to containerize the app.
-- The Qdrant vector database is already created and live on Qdrant Cloud (Already used by JellyChat).
+- API is written in Python using Flask.
+- Containerized using Docker.
+- Deployed on Fly.io.
 
-### Plugin Definition
+## Key components
 
-_https://platform.openai.com/docs/plugins/getting-started/plugin-manifest_
+The following components are key to the implementation of the plugin.
 
-Hosted at: [`/.well-known/ai-plugin.json`](./src/.well-known/ai-plugin.json)
+### Plugin definition
+
+- Source: [`.well-known/ai-plugin.json`](./src/.well-known/ai-plugin.json)
+- Live at: https://defichain-chatgpt-plugin.fly.dev/.well-known/ai-plugin.json
+- Docs: https://platform.openai.com/docs/plugins/getting-started/plugin-manifest
 
 ### OpenAPI definition
 
-_https://platform.openai.com/docs/plugins/getting-started/openapi-definition_
+- Source: [`.well-known/openapi.yaml`](./src/.well-known/openapi.yaml)
+- Live at: https://defichain-chatgpt-plugin.fly.dev/.well-known/openapi.yaml
+- To test: [Swagger Editor](https://editor-next.swagger.io/)
+- Docs: https://platform.openai.com/docs/plugins/getting-started/openapi-definition
 
-Hosted at: [`/.well-known/openapi.yaml`](./src/.well-known/openapi.yaml)
+### Logo
 
-To test the OpenAPI definition, you can use the [Swagger Editor](https://editor-next.swagger.io/).
+- Source: [`.well-known/logo.png`](./src/.well-known/logo.png)
+- Live at: https://defichain-chatgpt-plugin.fly.dev/.well-known/logo.png
 
 ## Basic commands
 
@@ -51,4 +62,22 @@ python -m venv venv
 
 ```
 Deactivate
+```
+
+## Docker
+
+We use Docker to package and run the Plugin API. This makes the deployment more reliable and easier.
+
+When deploying to Fly.io, we don't use Docker commands ourselves. The generation of the Docker image is done by Fly.io.
+
+### Create image
+
+```
+docker build -t defichain-chatgpt-plugin .
+```
+
+### Run the image
+
+```
+docker container run --name DeFiChain_ChatGPT_Plugin --env-file .env -d -p 8080:8080 defichain-chatgpt-plugin
 ```
