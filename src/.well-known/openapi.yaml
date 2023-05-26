@@ -1,10 +1,10 @@
-openapi: 3.0.0
+openapi: 3.1.0
 info:
   title: DeFiChain Plugin
   description: A plugin for retrieving basic knowledge and live blockchain data about DeFiChain.
   version: "v1"
 servers:
-  -url: https://{demo-retrieval-app}.fly.dev
+  - url: https://{demo-retrieval-app}.fly.dev
 paths:
   /knowledge:
     post:
@@ -15,14 +15,14 @@ paths:
         content:
           application/json:
             schema:
-            $ref: "#/components/schemas/getKnowledgeRequest"
+              $ref: "#/components/schemas/getKnowledgeRequest"
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-              $ref: "#/components/schemas/getKnowledgeResponse"
+                $ref: "#/components/schemas/getKnowledgeResponse"
 components:
   schemas:
     getKnowledgeRequest:
@@ -31,12 +31,14 @@ components:
         query:
           type: string
           description: A question asking for the knowledge.
-          required: true
+          example: What is DeFiChain?
+      required:
+        - query
     getKnowledgeResponse:
       type: object
       properties:
         answer:
           type: array
-          description: The answer to the questions.
+          description: A list of documents that could contain information of answering a question.
           items:
             type: string
