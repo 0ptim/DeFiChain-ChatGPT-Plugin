@@ -23,33 +23,13 @@ ChatGPT Plugin for Defichain.
 
 _https://platform.openai.com/docs/plugins/getting-started/plugin-manifest_
 
-Hosted at: `/.well-known/ai-plugin.json`
-
-```json
-{
-  "schema_version": "v1",
-  "name_for_human": "DeFiChain",
-  "name_for_model": "defichain",
-  "description_for_human": "Plugin for answering questions about DeFiChain and getting live blockchain data.",
-  "description_for_model": "Plugin for answering questions about DeFiChain and getting live blockchain data.",
-  "auth": {
-    "type": "none"
-  },
-  "api": {
-    "type": "openapi",
-    "url": "https://{FLY_URL_HERE}/openapi.yaml"
-  },
-  "logo_url": "https://{FLY_URL_HERE}/logo.png",
-  "contact_email": "",
-  "legal_info_url": ""
-}
-```
+Hosted at: [`/.well-known/ai-plugin.json`](./src/.well-known/ai-plugin.json)
 
 ### OpenAPI definition
 
 _https://platform.openai.com/docs/plugins/getting-started/openapi-definition_
 
-To generate the OpenAPI definition, we'll use the [Flasgger](https://github.com/flasgger/flasgger) library.
+Hosted at: [`/.well-known/openapi.yaml`](./src/.well-known/openapi.yaml)
 
 ## Basic commands
 
