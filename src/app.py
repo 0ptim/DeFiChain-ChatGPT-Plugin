@@ -1,6 +1,7 @@
 # Imports
 from dotenv import load_dotenv
 from flask import Flask, request, make_response
+from embed import get_embedding
 
 # Setup
 load_dotenv()
