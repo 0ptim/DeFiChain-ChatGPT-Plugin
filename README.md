@@ -50,3 +50,23 @@ Hosted at: `/.well-known/ai-plugin.json`
 _https://platform.openai.com/docs/plugins/getting-started/openapi-definition_
 
 To generate the OpenAPI definition, we'll use the [Flasgger](https://github.com/flasgger/flasgger) library.
+
+## Basic commands
+
+### Create virtual environment
+
+```
+python -m venv venv
+```
+
+### Activate virtual environment
+
+```
+.\venv\Scripts\activate
+```
+
+### Deactivate virtual environment
+
+```
+Deactivate
+```
