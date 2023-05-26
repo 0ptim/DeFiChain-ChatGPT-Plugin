@@ -4,7 +4,7 @@ info:
   description: A plugin for retrieving basic knowledge and live blockchain data about DeFiChain.
   version: "v1"
 servers:
-  - url: https://{demo-retrieval-app}.fly.dev
+  - url: https://defichain-chatgpt-plugin.fly.dev
 paths:
   /knowledge:
     post:

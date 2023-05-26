@@ -9,9 +9,9 @@
     },
     "api": {
         "type": "openapi",
-        "url": "https://{APPNAME}.fly.dev/.well-known/openapi.yaml"
+        "url": "https://defichain-chatgpt-plugin.fly.dev/.well-known/openapi.yaml"
     },
-    "logo_url": "https://{APPNAME}.fly.dev/.well-known/logo.png",
+    "logo_url": "https://defichain-chatgpt-plugin.fly.dev/.well-known/logo.png",
     "contact_email": "partners@defichain.com",
     "legal_info_url": "https://defichain.com/privacy-policy"
 }
