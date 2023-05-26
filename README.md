@@ -1,4 +1,4 @@
-# Concept
+# DeFiChain ChatGPT Plugin
 
 ChatGPT Plugin for Defichain.
 
