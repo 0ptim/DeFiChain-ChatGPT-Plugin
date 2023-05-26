@@ -35,10 +35,18 @@ components:
       required:
         - query
     getKnowledgeResponse:
-      type: object
-      properties:
-        answer:
-          type: array
-          description: A list of documents that could contain information of answering a question.
-          items:
+      type: array
+      description: A list of documents that could contain information of answering a question.
+      items:
+        type: object
+        properties:
+          metadata:
+            type: object
+            description: Metadata of the documents.
+            properties:
+              source:
+                type: string
+                description: The URL from where the content was fetched. You can use this to let the user know where the information is coming from so he can verify if wanted.
+          page_content:
             type: string
+            description: The page content which can be used to answer a question.
