@@ -31,6 +31,8 @@ _https://platform.openai.com/docs/plugins/getting-started/openapi-definition_
 
 Hosted at: [`/.well-known/openapi.yaml`](./src/.well-known/openapi.yaml)
 
+To test the OpenAPI definition, you can use the [Swagger Editor](https://editor-next.swagger.io/).
+
 ## Basic commands
 
 ### Create virtual environment
